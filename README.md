@@ -1,36 +1,37 @@
+# 📄🔍 LegalHelp AI – Chatbot d’Assistance Juridique pour Salariés
 
-# 📄🔍 Chatbot PDF avec Azure OpenAI + Azure AI Search (RAG)
-
-## Hackaton IA Générative - 2025 - Proposé par Microsoft et OpenCertif
-
-
-Ce projet Streamlit permet d'analyser un document PDF, d'indexer son contenu dans **Azure AI Search**, et de poser des questions en langage naturel grâce à **Azure OpenAI (ChatGPT)**, le tout à l’aide de la technique RAG (Retrieval-Augmented Generation).
+### 🧠 Projet développé dans le cadre du Hackathon IA Générative 2025  
+📍 Organisé par **Efrei**, **Microsoft** et **OpenCertif**
 
 ---
 
-## 🧠 Objectif
+## 🎯 Objectifs du Projet
 
-Créer un chatbot capable de répondre à des questions sur le contenu d’un PDF en combinant :
-- Extraction du texte des PDF,
-- Génération d’**embeddings** via Azure OpenAI,
-- Indexation vectorielle via **Azure AI Search**,
-- Recherche vectorielle des passages pertinents,
-- Génération de réponse contextuelle par un modèle GPT-4 (ou autre).
+**LegalHelp AI** est un assistant virtuel conçu pour accompagner les salariés confrontés à des situations juridiques au travail. Grâce à l’IA générative, il leur permet de :
 
----
+- Identifier rapidement les situations potentiellement litigieuses.
+- Recevoir des conseils concrets et structurés, étape par étape.
+- Savoir quelles preuves rassembler (guides, fiches pratiques, modèles de lettres, témoignages…).
+- Comprendre les démarches à entreprendre en cas d’abus professionnel.
 
-## ⚙️ Technologies utilisées
-
-| Composant           | Description                                                                       |
-|---------------------|-----------------------------------------------------------------------------------|
-| **Streamlit**       | Frontend interactif pour uploader le PDF, poser des questions, voir les réponses. |
-| **Azure OpenAI**    | Génération d’embeddings (text-embedding-ada-002) + réponse via GPT-4.             |
-| **Azure AI Search** | Stockage et recherche vectorielle des segments du PDF.                            |
-| **PyPDF2**          | Extraction du texte page par page dans les PDF.                                   |
+> 💡 L'objectif : démocratiser l'accès à une première orientation juridique claire et immédiate.
 
 ---
 
-## 📦 Dépendances Python
+## 🛠️ Stack Technique & Fonctionnalités
+
+Le projet repose sur une architecture moderne combinant extraction de documents, recherche vectorielle et génération de texte augmentée (RAG).
+
+| Composant           | Rôle                                                                 |
+|---------------------|----------------------------------------------------------------------|
+| **Streamlit**       | Interface web interactive (upload de PDF, Q&A en langage naturel).   |
+| **Azure OpenAI**    | Embedding des textes & génération des réponses (GPT-4o).             |
+| **Azure AI Search** | Indexation & recherche vectorielle des documents.                    |
+| **PyPDF2**          | Extraction du contenu textuel page par page à partir des PDF.        |
+
+---
+
+## 📦 Installation des Dépendances
 
 ```bash
 pip install streamlit openai azure-search-documents python-dotenv PyPDF2
@@ -38,46 +39,60 @@ pip install streamlit openai azure-search-documents python-dotenv PyPDF2
 
 ---
 
-## 🏗️ Ressources créées sur Azure
+## 🏗️ Infrastructure Azure
 
-### 1. 🔐 Azure OpenAI
+### 🔐 1. Azure OpenAI
 
-- **Ressource** : Azure OpenAI (ex: `openai-hackaton`)
-- **Modèles déployés** :
-  - `gpt-4o`  → pour les réponses
-  - `text-embedding-ada-002` → pour les vecteurs (1536 dimensions)
-- **Clés nécessaires** :
+- **Ressource** : `openai-hackaton`
+- **Modèles utilisés** :
+  - `gpt-4o` → génération de réponses
+  - `text-embedding-ada-002` → création de vecteurs (1536 dimensions)
+- **Variables d’environnement nécessaires** :
   - `AZURE_OPENAI_API_KEY`
   - `ENDPOINT_URL`
 
-### 2. 🔎 Azure AI Search
+### 🔎 2. Azure AI Search
 
-- **Ressource** : Azure Cognitive Search (ex: `hackaton-search`)
-- **Index créé** (via portail Azure de préférence) :
-  - Nom : `openai_index`
-  - Champs :
-    - `id` : clé du document
-    - `content` : contenu textuel de la page
-    - `embedding` : champ vectoriel (1536 dimensions)
-- **Profil vectoriel** :
-  - Crée un `Vector Search Profile` appelé `default`
-  - Active `HNSW` (algorithme de recherche vectorielle)
-- **Clé nécessaire** :
+- **Ressource** : `hackaton-search`
+- **Index à créer** :
+  - **Nom** : `openai_index`
+  - **Champs** :
+    - `id` : identifiant unique
+    - `content` : contenu textuel du document
+    - `embedding` : vecteurs d’embedding (1536 dimensions)
+- **Configuration vectorielle** :
+  - Créer un profil `Vector Search Profile` appelé `default`
+  - Activer l’algorithme **HNSW** (recherche vectorielle haute performance)
+- **Clé API requise** :
   - `SEARCH_API_KEY`
 
 ---
 
-
-## 👨‍💻 Auteur
-
-Par Corentin KERVAGORET, Lilian CAO, Shiley MORISSEAU et Mathys BAJT
-Projet développé avec l’aide de ChatGPT  
-
----
-## 🚀 Lancer le projet
+## 🚀 Lancer l’application
 
 ```bash
-  streamlit run app.py
+streamlit run app.py
 ```
 
+---
 
+## 👥 Équipe projet
+
+Développé par :
+- **Corentin KERVAGORET**
+- **Lilian CAO**
+- **Shiley MORISSEAU**
+- **Mathys BAJT**  
+Avec le soutien de **ChatGPT** 🤖
+
+---
+
+## 🔗 Liens utiles
+
+- [📘 Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/)
+- [🔎 Azure AI Search Documentation](https://learn.microsoft.com/en-us/azure/search/)
+- [📄 Streamlit Docs](https://docs.streamlit.io/)
+- [📚 PyPDF2 Documentation](https://pypi.org/project/PyPDF2/)
+- [📦 azure-search-documents (Python)](https://pypi.org/project/azure-search-documents/)
+
+---
