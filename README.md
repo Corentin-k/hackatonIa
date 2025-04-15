@@ -83,7 +83,8 @@ Développé par :
 - **Lilian CAO**
 - **Shiley MORISSEAU**
 - **Mathys BAJT**  
-Avec le soutien de **ChatGPT** 🤖
+- 
+Projet développé avec l’aide de ChatGPT 🤖
 
 ---
 
