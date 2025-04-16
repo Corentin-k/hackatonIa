@@ -327,7 +327,7 @@ if st.button("Analyser ma situation"):
 
                 st.write(f"**Modèle IA:** {deployment_chat}")
 
-            st.warning("⚠️ Conseil informatif - Consultez un avocat pour une analyse personnalisée")
+            st.warning("⚠️ Les réponses fournies par ce chatbot sont à titre informatif et ne constituent pas un avis juridique. Pour toute décision importante, consultez un professionnel du droit.")
 
         except Exception as e:
             st.error(f"Erreur de génération : {e}")
