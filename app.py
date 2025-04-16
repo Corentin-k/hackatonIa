@@ -26,6 +26,13 @@ ALERT_COLOR = "#E3F2FD"
 
 custom_css = f"""
 <style>
+    html, body, [data-testid="stAppViewContainer"] {{
+        background-color: white !important;
+        color: black !important;
+    }}
+    [data-testid="stSidebar"] {{
+        background-color: #f0f2f6 !important;
+    }}
     /* Configuration générale */
     .stApp {{
         background-color: {BACKGROUND_COLOR};
