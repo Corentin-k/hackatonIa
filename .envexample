@@ -1,0 +1,8 @@
+// Azure portal> Azure OpenAI> Keys and Endpoints
+AZURE_OPENAI_API_KEY=
+SEARCH_API_KEY=
+
+// Azure portal> Search service > Overview > Url
+ENDPOINT_URL=
+// Azure portal> Azure OpenAI> Settins > Keys
+SEARCH_ENDPOINT=
