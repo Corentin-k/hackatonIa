@@ -5,6 +5,12 @@
 
 ---
 
+![image](https://github.com/user-attachments/assets/6b71bb92-55b1-469f-935f-5a690114e3d1)
+
+## Lien vers le site 
+
+>>> [https://legalai-hackaton.streamlit.app/](https://legalai-hackaton.streamlit.app/)
+
 ## 🎯 Objectifs du Projet
 
 **LegalHelp AI** est un assistant virtuel conçu pour accompagner les salariés confrontés à des situations juridiques au travail. Grâce à l’IA générative, il leur permet de :
